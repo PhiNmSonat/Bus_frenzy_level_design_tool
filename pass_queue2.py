@@ -81,6 +81,12 @@ def process_guests(guest_data):
     clusters = []
     while passengers:
         cluster_size = int(input("Enter the number of colors to group into this cluster: "))
+        
+        # Input validation for cluster size
+        while cluster_size <= 1:
+            print("Invalid input. Please enter a number greater than 1.")
+            cluster_size = int(input("Enter the number of colors to group into this cluster (must be > 1): "))
+
         cluster = create_clusters(passengers, cluster_size)[0]  # Take the first cluster formed
         clusters.append(cluster)
         passengers = passengers[len(cluster):]  # Reduce passengers by the cluster size
@@ -95,10 +101,16 @@ def process_guests(guest_data):
         randomize = input(f"Do you want to randomize Cluster {i+1}? (1/0): ")
         if randomize == '1':
             min_split = int(input("Enter the minimum number to split each group: "))
+            # Input validation for minimum split
+            while min_split <= 0:
+                print("Invalid input. Please enter a number greater than 0.")
+                min_split = int(input("Enter the minimum number to split each group (must be > 0): "))
             randomized_cluster = randomize_cluster(cluster, min_split)
             grouped_cluster = group_passengers(randomized_cluster)
             clusters[i] = grouped_cluster
-
+        elif randomize == '0':
+            clusters[i] = group_passengers(cluster)
+            
     # Flatten the clusters back into a list of passengers (no nested structure)
     flattened_passengers = [p for cluster in clusters for p in cluster]
     
