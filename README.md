@@ -8,6 +8,7 @@
 ![Xếp level](Images/run_file.png)
 5. Script cho phép chia hàng khách thành các cụm, mỗi cụm có số màu riêng biệt tùy vào user nhập khi được hỏi "Enter the number of colors to group into this cluster:". Nhập xong, nhấn enter sẽ hiển thị số khách chưa được group vào cluster -> cứ tiếp tục chia như vậy cho đến khi hết khách. Thường ban đầu level dễ sẽ chia thành các cluster 3 màu, giữa/ cuối level khó thì lồng 1 2 cluster 4 màu vào tăng thử thách...
 6. Sau khi chia thành các cluster, sẽ hiển thị tổng số cluster, số khách mỗi cluster, số màu mỗi cluster. Sau đó đi từng cluster một từ đầu đến cuối, hỏi user có muốn random trong cluster đó ko
+
 ![Xếp level](Images/almost_done.png)
 
 Nhấn 1 để có random, 0 để bỏ qua, tự xếp tay lại
