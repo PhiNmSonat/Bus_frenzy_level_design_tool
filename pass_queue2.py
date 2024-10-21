@@ -12,7 +12,7 @@ def save_json(data, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)
+        json.dump(data, file, separators=(',', ':'))
     print(f"Successfully saved to {file_path}")
 
 
