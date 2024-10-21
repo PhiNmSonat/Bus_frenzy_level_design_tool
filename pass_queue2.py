@@ -1,5 +1,6 @@
 import json
 import random
+import os
 
 def load_json(file_path):
     with open(file_path, 'r') as file:
@@ -7,6 +8,9 @@ def load_json(file_path):
     print(f"Successfully loaded file at {file_path}")
 
 def save_json(data, file_path):
+    # Create directory if it doesn't exist
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
     print(f"Successfully saved to {file_path}")
@@ -100,9 +104,9 @@ def process_guests(guest_data):
     
     return flattened_passengers  # Return the correct list of grouped passengers
 
-def modify_json(file_path):
+def modify_json(file_path, fail_safe):
     data = load_json(file_path)
-
+    save_json(data, fail_safe)
     # Process the guest data with manual clustering and randomization
     data['guestDatas'] = process_guests(data['guestDatas'])
 
@@ -110,7 +114,15 @@ def modify_json(file_path):
     save_json(data, file_path)
     print()
 
-# Example usage
-file_path = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/1001.json"
-out_put_path = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/Levels/5000.json"
-modify_json(file_path)
+# All the functions you defined remain the same above...
+# file_path = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/20081.json"
+file_path = "C:/Users/ADMIN/Downloads/2002.json"
+fail_safe = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/fail_safe/fail_safe.json"
+
+# To ensure the function will only be call when run the main file:
+if __name__ == "__main__":
+    modify_json(file_path, fail_safe)
+
+# file_path = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/10008.json"
+# fail_safe = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/fail_safe/fail_safe.json"
+# modify_json(file_path, fail_safe)
