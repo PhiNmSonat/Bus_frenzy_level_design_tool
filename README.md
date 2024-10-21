@@ -1,6 +1,6 @@
 # Hướng dẫn sử dụng:
 
-1. Download file
+1. Download file pass_queue2.py
 2. Trong máy, sau khi xếp xong layout (thường xếp tầm 5+ màu), playcar xong, nhấn save order xong và save file:
 ![Xếp level](Images/playcar.png)
 3. Mở script lên, sửa các đường dẫn: file_path là path tới file level vừa save, fail_safe là file để đề phòng chạy script lỗi gì thì back về trạng thái vừa playcar với save order xong được
