@@ -126,7 +126,6 @@ def modify_json(file_path, fail_safe):
     save_json(data, file_path)
     print()
 
-# All the functions you defined remain the same above...
 # file_path = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/20081.json"
 file_path = "C:/Users/ADMIN/Downloads/2002.json"
 fail_safe = "D:/Downloads/GD_works/Bus_frenzy/ToolBusOut (6)/ToolBusOut/TestLevelBusOut/Bus Out_Data/Levels/fail_safe/fail_safe.json"
