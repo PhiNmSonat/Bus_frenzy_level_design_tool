@@ -1,6 +1,6 @@
 # Hướng dẫn sử dụng:
 
-1. Download file pass_queue2.py
+1. Clone folder/ download file pass_queue2.py
 2. Trong máy, sau khi xếp xong layout (thường xếp tầm 5+ màu), playcar xong, nhấn save order xong và save file:
 
 ![Xếp level](Images/playcar.png)
